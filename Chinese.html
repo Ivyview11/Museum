@@ -35,6 +35,382 @@ body{
     background 1s ease,
     color 1s ease;
 }
+  <!-- =========================
+     数字博物馆 · 历史影像档案
+     可直接粘贴到 <body>
+========================= -->
+
+<section class="archive-gallery">
+
+  <div class="archive-title">
+    <span>历史影像档案</span>
+    <h2>他们与他们留下的世界</h2>
+    <p>真实历史影像 · 人物 · 现场 · 物证</p>
+  </div>
+
+
+  <!-- =========================
+       袁隆平
+  ========================= -->
+
+  <article class="archive-person archive-yuan">
+
+    <div class="archive-image archive-image-main">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Yuan%20Longping%20close-up%20(cropped).png"
+        alt="袁隆平"
+      >
+      <div class="archive-caption">
+        <span>袁隆平</span>
+        <small>杂交水稻研究者</small>
+      </div>
+    </div>
+
+    <div class="archive-text">
+      <span class="archive-number">01</span>
+      <h3>实践出真知</h3>
+      <p>
+        从田野开始，以水稻为尺度，把实验写进一望无际的稻浪。
+      </p>
+    </div>
+
+  </article>
+
+
+  <!-- =========================
+       钟扬
+  ========================= -->
+
+  <article class="archive-person archive-zhong">
+
+    <div class="archive-image archive-image-main">
+      <img
+        src="https://news.fudan.edu.cn/__local/8/7E/2A/7C7E9D1F0C9D0D9A9A4C7F0E9B0_4E8F9B8B.jpg"
+        alt="钟扬在西藏考察"
+      >
+      <div class="archive-caption">
+        <span>钟扬</span>
+        <small>西藏野外考察</small>
+      </div>
+    </div>
+
+    <div class="archive-text">
+      <span class="archive-number">02</span>
+      <h3>把种子带向未来</h3>
+      <p>
+        山脊、风雪、标本袋与一双不断向前的脚。
+      </p>
+    </div>
+
+  </article>
+
+
+  <!-- =========================
+       林徽因
+  ========================= -->
+
+  <article class="archive-person archive-lin">
+
+    <div class="archive-image archive-image-main">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/%E6%9E%97%E5%BE%BD%E5%9B%A0%E5%9C%A8%E4%BA%94%E5%8F%B0%E5%B1%B1%E4%BD%9B%E5%85%89%E5%AF%BA%E6%B5%8B%E7%BB%98%E7%BB%8F%E5%B9%A2.jpg"
+        alt="林徽因在五台山佛光寺测绘经幢"
+      >
+      <div class="archive-caption">
+        <span>林徽因</span>
+        <small>五台山 · 佛光寺 · 1937</small>
+      </div>
+    </div>
+
+    <div class="archive-text">
+      <span class="archive-number">03</span>
+      <h3>她亲手丈量历史</h3>
+      <p>
+        尺、笔与一座古老建筑之间，是人与历史留下证据的方式。
+      </p>
+    </div>
+
+  </article>
+
+</section>
+
+
+<style>
+
+/* =========================
+   博物馆档案区
+========================= */
+
+.archive-gallery {
+  position: relative;
+  width: 100%;
+  padding: 12vh 7vw 16vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,255,255,.035),
+      transparent 45%
+    ),
+    #0b0d0c;
+  color: #eee9df;
+}
+
+
+/* 标题 */
+
+.archive-title {
+  max-width: 900px;
+  margin: 0 auto 12vh;
+  text-align: center;
+}
+
+.archive-title span {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 11px;
+  letter-spacing: .35em;
+  opacity: .55;
+}
+
+.archive-title h2 {
+  margin: 0;
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    "STSong",
+    serif;
+  font-size: clamp(30px, 5vw, 64px);
+  font-weight: 400;
+  letter-spacing: .08em;
+}
+
+.archive-title p {
+  margin-top: 22px;
+  font-size: 12px;
+  letter-spacing: .25em;
+  opacity: .4;
+}
+
+
+/* 人物区域 */
+
+.archive-person {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 1.15fr) minmax(220px, .65fr);
+  align-items: center;
+  gap: 7vw;
+
+  max-width: 1250px;
+  min-height: 75vh;
+
+  margin: 0 auto 15vh;
+}
+
+
+/* 图片 */
+
+.archive-image {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  aspect-ratio: 4 / 5;
+
+  background: #151715;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.45);
+}
+
+.archive-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(0,0,0,.72)
+    );
+
+  pointer-events: none;
+}
+
+.archive-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  filter:
+    saturate(.78)
+    contrast(1.04);
+
+  transform: scale(1.015);
+
+  transition:
+    transform 1.2s cubic-bezier(.2,.7,.2,1),
+    filter 1.2s ease;
+}
+
+.archive-image:hover img {
+  transform: scale(1.055);
+
+  filter:
+    saturate(.95)
+    contrast(1.06);
+}
+
+
+/* 图片文字 */
+
+.archive-caption {
+  position: absolute;
+
+  left: 28px;
+  right: 28px;
+  bottom: 25px;
+
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  color: white;
+}
+
+.archive-caption span {
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size: 25px;
+  letter-spacing: .12em;
+}
+
+.archive-caption small {
+  font-size: 10px;
+  letter-spacing: .18em;
+  opacity: .65;
+}
+
+
+/* 旁边文字 */
+
+.archive-text {
+  position: relative;
+  max-width: 360px;
+}
+
+.archive-number {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-family: serif;
+  font-size: 12px;
+  letter-spacing: .3em;
+  opacity: .35;
+}
+
+.archive-text h3 {
+  margin: 0;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    "STSong",
+    serif;
+
+  font-size: clamp(28px, 3.5vw, 48px);
+
+  font-weight: 400;
+
+  line-height: 1.35;
+
+  letter-spacing: .08em;
+}
+
+.archive-text p {
+  margin-top: 30px;
+
+  max-width: 300px;
+
+  font-family:
+    "Noto Serif SC",
+    "Songti SC",
+    serif;
+
+  font-size: 14px;
+
+  line-height: 2.1;
+
+  letter-spacing: .08em;
+
+  opacity: .58;
+}
+
+
+/* =========================
+   三个人物的微妙色调
+========================= */
+
+.archive-yuan .archive-image {
+  box-shadow:
+    0 35px 90px rgba(187,145,35,.12);
+}
+
+.archive-zhong .archive-image {
+  box-shadow:
+    0 35px 90px rgba(32,74,150,.18);
+}
+
+.archive-lin .archive-image {
+  box-shadow:
+    0 35px 90px rgba(92,45,105,.18);
+}
+
+
+/* =========================
+   手机 / iPad
+========================= */
+
+@media (max-width: 800px) {
+
+  .archive-gallery {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .archive-person {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    min-height: auto;
+    margin-bottom: 18vh;
+  }
+
+  .archive-image {
+    aspect-ratio: 4 / 5;
+  }
+
+  .archive-text {
+    padding-left: 5vw;
+  }
+
+  .archive-text p {
+    max-width: 90%;
+  }
+
+}
+
+</style>
 
 body[data-theme="yuan"]{
   --bg:#f3c800;
